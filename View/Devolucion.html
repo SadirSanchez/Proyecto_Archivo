@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devolución</title>
+    <link rel="stylesheet" type="text/css" href="Archivo.css">
+    <link rel="stylesheet" href="../materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <img src="/Img/Escudo.png" alt="">
+        Archivo municipal de Planeta Rica
+        <a href="index.html">Cerrar sesión</a>
+    </header>
+
+    <nav class="nav-extended ">
+        <div class="nav-wrapper blue lighten-1">
+            <a class="NavInicio" href="pantallaprincipal.html">Inicio</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="Documentos.html">Documentos</a></li>
+                <li><a href="Usuarios.html">Usuarios</a></li>
+                <li><a href="Alertasyestadistica.html">Alertas y estadisticas</a></li>
+                <li><a href="Manual.html">Manual</a></li>
+            </ul>
+        </div>
+        <div class="nav-content ">
+            <ul class="tabs tabs-transparent blue lighten-1 ">
+                <li><a href="Recepcionar.html">Recepcionar</a></li>
+                <li><a href="Consulta.html">Consulta</a></li>
+                <li><a href="Prestamo.html">Prestamo</a></li>
+                <li><a href="Devolucion.html">Devolución</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1 class="TituloDePantallas">Devolución de documentos</h1>
+
+    <div class="row">
+        <div class="col s12 m6 l6 xl6 ">
+            <form>
+                <div class="row">
+                    <div class="input-field col s12 offset-s3 center-align">
+                        <input type="text" id="Nombre-CodigoDelDocumento-Devolucion">
+                        <label class="black-text" for="Nombre-CodigoDelDocumento-Devolucion">Nombre/Código del documento</label>
+                    </div>
+                    
+                    <div class="col s12 offset-s3 center-align">
+                        <div class="input-field">
+                            <label class="black-text">Fecha de Devolución</label>
+                            <input type="text" class="datepicker">
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 offset-s3 center-align">
+                        <input type="text" id="InventarioDocumentalEntregado">
+                        <label class="black-text" for="InventarioDocumentalEntregado">Inventario Documental Entregado</label>
+                    </div>
+
+                    <div class="input-field col s12 offset-s1 center-align">
+                        <form action="#">
+                            <p>
+                              <label>
+                                <input type="checkbox" />
+                                <span class="black-text">Completo</span>
+                              </label>
+                            </p>
+                        </form>
+                    </div>
+
+                    <div class="input-field col s12 offset-s3 left-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Recibir
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../Controller/Archivo.js"></script>
+    <script src="../materialize/js/materialize.min.js"></script>
+
+</body>
+
+</html>

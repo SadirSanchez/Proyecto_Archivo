@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Documents from '@/views/Documents/Documents.vue'
+import Receive from '@/views/Documents/Receive.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,7 +13,15 @@ const router = createRouter({
     {
       path: '/documentos',
       name: 'document',
-      component: Documents
+      redirect: '/documentos/recepcionar',
+      component: Receive, // Cambia el componente del padre a Receive
+      children: [
+        {
+          path: 'recepcionar', // Cambia el camino a 'recepcionar'
+          name: 'documentReceive', // Cambia el nombre a 'documentReceive'
+          component: Receive,
+        }
+      ]
     }
   ]
 })

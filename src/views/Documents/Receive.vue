@@ -9,6 +9,8 @@
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Código</label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="form.code"></textarea>
+
+          <button class="btn btn-primary" @click="saveReceive()">Guardar</button>
         </div>
       </div>
     </div>
@@ -16,7 +18,12 @@
 </template>
 
 <script>
+
+
+import receiveService from "@/services/receiveService.js";
+
 export default {
+
   name: "ReceiveView",
 
   components: {
@@ -32,6 +39,10 @@ export default {
   },
 
   methods: {
+
+    saveReceive(){
+      receiveService.saveReceive(this.form)
+    }
 
   },
 };

@@ -1,3 +1,9 @@
+/*const app = new Vue ({
+  el: '#app',
+  
+  }
+  );*/
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var botonRegresar = document.getElementById('botonRegresar');

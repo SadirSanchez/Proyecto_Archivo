@@ -1,29 +1,41 @@
 <template>
-  <nav>
-    <div class="nav-wrapper blue lighten-1">
-      <a class="NavInicio" href="pantallaprincipal.html">Inicio</a>
-      <ul class="right hide-on-med-and-down">
-        <li><RouterLink to="/documentos">Documentos</RouterLink></li>
-        <ul id="dropdown-menu" class="dropdown-content">
-            <li><a href="#!">Opción 1</a></li>
-            <li><a href="#!">Opción 2</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">Opción 3</a></li>
-        </ul>
-        <li><a href="Usuarios.html">Usuarios</a></li>
-        <li><a href="Alertasyestadistica.html">Alertas y estadisticas</a></li>
-        <li><a href="Manual.html">Manual</a></li>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">LOGO </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Documentos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Alertas y estadisticas</a>
+        </li>
+       
       </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 </template>
 
 <script>
-import { RouterLink }  from 'vue-router'
+import { RouterLink } from "vue-router";
 export default {
   name: "NavBar",
   components: {
-    RouterLink
-  }
+    RouterLink,
+  },
 };
 </script>

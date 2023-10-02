@@ -41,9 +41,19 @@
             </ul>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Alertas y estadisticas</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Alertas y estadisticas
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <RouterLink to="/usuarios/registrar" class="dropdown-item" href="#">Alertas</RouterLink>
+              </li>
+              <li><a class="dropdown-item" href="#">Estadisticas</a></li>
+            </ul>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="#">Manual</a>
           </li>

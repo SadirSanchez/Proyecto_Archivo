@@ -2,40 +2,45 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">LOGO </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Documentos
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><RouterLink to="/documentos/recepcionar" class="dropdown-item" href="#">Recepcionar</RouterLink></li>
+              <li>
+                <RouterLink to="/documentos/recepcionar" class="dropdown-item" href="#">Recepcionar</RouterLink>
+              </li>
               <li><a class="dropdown-item" href="#">Prestamo</a></li>
               <li><a class="dropdown-item" href="#">Consulta</a></li>
               <li><a class="dropdown-item" href="#">Devolución</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Usuarios</a>
+
+
+          <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Usuarios
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <RouterLink to="/usuarios/registrar" class="dropdown-item" href="#">Registrar</RouterLink>
+              </li>
+              <li><a class="dropdown-item" href="#">Consultar</a></li>
+              <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
+            </ul>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="#">Alertas y estadisticas</a>
           </li>

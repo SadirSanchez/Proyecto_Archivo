@@ -1,6 +1,6 @@
 <template>
 
- <h1>Prueba</h1>
+ <h1>Prueba Registrar</h1>
 
 </template>
   

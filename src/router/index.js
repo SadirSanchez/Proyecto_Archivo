@@ -5,6 +5,8 @@ import Consult from '@/views/Documents/Consult.vue'
 import Lend from '@/views/Documents/Lend.vue'
 import Return from '@/views/Documents/Return.vue'
 import Register from '@/views/Users/Register.vue'
+import ConsultUsers from '@/views/Users/ConsultUsers.vue'
+import ChangePassword from '@/views/Users/ChangePassword.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,19 +33,19 @@ const router = createRouter({
     {
       path: '/documentos/consultar',
       name: 'documentConsult',
-      component: Consult, // Cambia el componente del padre a Receive
+      component: Consult,
     },
 
     {
       path: '/documentos/prestar',
       name: 'documentLend',
-      component: Lend, // Cambia el componente del padre a Receive
+      component: Lend,
     },
 
     {
       path: '/documentos/devolucion',
       name: 'documentReturn',
-      component: Return, // Cambia el componente del padre a Receive
+      component: Return,
     },
 
     {
@@ -58,7 +60,20 @@ const router = createRouter({
           component: Register,
         }
       ]
-    }
+    },
+
+    {
+      path: '/usuarios/consultarUsuarios',
+      name: 'UsersconsultUsers',
+      component:ConsultUsers, 
+    },
+
+    {
+      path: '/usuarios/cambiarContraseña',
+      name: 'UsersChangePassword',
+      component:ChangePassword, 
+    },
+
   ]
 })
 

@@ -29,7 +29,7 @@
               <li>
                 <RouterLink to="/documentos/devolucion" class="dropdown-item" href="#">Devolución</RouterLink>
               </li>
-              
+
             </ul>
           </li>
 
@@ -45,8 +45,16 @@
               <li>
                 <RouterLink to="/usuarios/registrar" class="dropdown-item" href="#">Registrar</RouterLink>
               </li>
-              <li><a class="dropdown-item" href="#">Consultar</a></li>
-              <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
+
+              <li>
+                <RouterLink to="/usuarios/consultarUsuarios" class="dropdown-item" href="#">Consultar usuarios
+                </RouterLink>
+              </li>
+
+              <li>
+                <RouterLink to="/usuarios/cambiarContraseña" class="dropdown-item" href="#">Cambiar Contraseña
+                </RouterLink>
+              </li>
             </ul>
           </li>
 

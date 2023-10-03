@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Receive from '@/views/Documents/Receive.vue'
+import Consult from '@/views/Documents/Consult.vue'
+import Lend from '@/views/Documents/Lend.vue'
+import Return from '@/views/Documents/Return.vue'
 import Register from '@/views/Users/Register.vue'
 
 const router = createRouter({
@@ -21,9 +24,28 @@ const router = createRouter({
           path: 'recepcionar', // Cambia el camino a 'recepcionar'
           name: 'documentReceive', // Cambia el nombre a 'documentReceive'
           component: Receive,
-        }
+        },
+
       ]
     },
+    {
+      path: '/documentos/consultar',
+      name: 'documentConsult',
+      component: Consult, // Cambia el componente del padre a Receive
+    },
+
+    {
+      path: '/documentos/prestar',
+      name: 'documentLend',
+      component: Lend, // Cambia el componente del padre a Receive
+    },
+
+    {
+      path: '/documentos/devolucion',
+      name: 'documentReturn',
+      component: Return, // Cambia el componente del padre a Receive
+    },
+
     {
       path: '/usuarios',
       name: 'users',

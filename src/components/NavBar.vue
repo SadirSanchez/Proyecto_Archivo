@@ -18,9 +18,18 @@
               <li>
                 <RouterLink to="/documentos/recepcionar" class="dropdown-item" href="#">Recepcionar</RouterLink>
               </li>
-              <li><a class="dropdown-item" href="#">Prestamo</a></li>
-              <li><a class="dropdown-item" href="#">Consulta</a></li>
-              <li><a class="dropdown-item" href="#">Devolución</a></li>
+              <li>
+                <RouterLink to="/documentos/consultar" class="dropdown-item" href="#">Consultar</RouterLink>
+              </li>
+
+              <li>
+                <RouterLink to="/documentos/prestar" class="dropdown-item" href="#">Prestar</RouterLink>
+              </li>
+
+              <li>
+                <RouterLink to="/documentos/devolucion" class="dropdown-item" href="#">Devolución</RouterLink>
+              </li>
+              
             </ul>
           </li>
 

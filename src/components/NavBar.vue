@@ -9,6 +9,8 @@
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
+
+          <!-- Documents-->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +35,7 @@
             </ul>
           </li>
 
-
+          <!--Users-->
           <li class="nav-item dropdown">
 
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -58,6 +60,7 @@
             </ul>
           </li>
 
+          <!--Alerts And Statistics-->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,9 +68,12 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li>
-                <RouterLink to="/usuarios/registrar" class="dropdown-item" href="#">Alertas</RouterLink>
+                <RouterLink to="/alertasyestadisticas/alertas" class="dropdown-item" href="#">Alertas</RouterLink>
               </li>
-              <li><a class="dropdown-item" href="#">Estadisticas</a></li>
+              <li>
+                <RouterLink to="/alertasyestadisticas/estadisticas" class="dropdown-item" href="#">Estadisticas</RouterLink>
+              </li>
+              
             </ul>
           </li>
 

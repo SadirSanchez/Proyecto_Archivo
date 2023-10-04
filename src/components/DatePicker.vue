@@ -16,6 +16,6 @@
   </script>
   
   <style scoped>
-  /* Estilos CSS específicos del componente si es necesario */
+  
   </style>
   

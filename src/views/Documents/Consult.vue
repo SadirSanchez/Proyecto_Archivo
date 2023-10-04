@@ -39,6 +39,11 @@
                 </ul>
 
             </div>
+            <div class="col-6">
+
+                <h1>Vista previa de los documentos</h1>
+
+            </div>
         </div>
     </div>
 </template>

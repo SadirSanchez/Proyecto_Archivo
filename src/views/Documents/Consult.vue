@@ -6,14 +6,7 @@
             <div class="col-6">
                 <div class="mb-3">
                     <label for="documentType" class="form-label">Tipo de documento</label>
-                    <select id="documentType" class="form-select">
-                        <option selected>Seleccionar</option>
-                        <option value="actas">Actas</option>
-                        <option value="resoluciones">Resoluciones</option>
-                        <option value="decretos">Decretos</option>
-                        <option value="contratos">Contratos</option>
-                        <option value="historia-laboral">Historia Laboral</option>
-                    </select>
+                    <DocumentTypes></DocumentTypes>
                 </div>
                 <div class="mb-3">
                     <label for="documentName" class="form-label">Nombre</label>

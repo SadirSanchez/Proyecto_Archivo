@@ -6,28 +6,28 @@
             <div class="col-6  ">
 
                 <div class="mb-3">
-                    <label for="documentType" class="form-label">Tipo de documento</label>
+                    <label class="form-label">Tipo de documento</label>
                     <DocumentTypes></DocumentTypes>
                 </div>
 
                 <div class="mb-3">
-                    <label for="productionUnit" class="form-label">Dependencia Productora</label>
+                    <label class="form-label">Dependencia Productora</label>
                     <DependencySelector></DependencySelector>
                 </div>
 
                 <div class="mb-3">
-                    <label for="documentName" class="form-label">Nombre/Código</label>
-                    <input type="text" class="form-control" id="documentName">
+                    <label for="documentNameLend" class="form-label">Nombre/Código</label>
+                    <input type="text" class="form-control" id="documentNameLend">
                 </div>
 
                 <div class="mb-3">
-                    <label for="documentCode" class="form-label">Inventario documental</label>
-                    <input type="text" class="form-control" id="documentCode">
+                    <label for="DocumentInventoryLend" class="form-label">Inventario documental</label>
+                    <input type="text" class="form-control" id="DocumentInventoryLend">
                 </div>
 
                 <div class="mb-3">
-                    <label for="documentCode" class="form-label">Responsable del prestamo</label>
-                    <input type="text" class="form-control" id="documentCode">
+                    <label for="responsibleLoan" class="form-label">Responsable del prestamo</label>
+                    <input type="text" class="form-control" id="responsibleLoan">
                 </div>
 
                 <div>

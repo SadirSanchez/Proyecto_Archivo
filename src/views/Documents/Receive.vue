@@ -15,12 +15,12 @@
           <DocumentTypes></DocumentTypes>
         </div>
         <div class="mb-3">
-          <label for="documentName" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="documentName">
+          <label for="documentNameReceive" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="documentNameReceive">
         </div>
         <div class="mb-3">
-          <label for="documentCode" class="form-label">Código</label>
-          <input type="text" class="form-control" id="documentCode">
+          <label for="documentCodeReceive" class="form-label">Código</label>
+          <input type="text" class="form-control" id="documentCodeReceive">
         </div>
 
         <div>
@@ -29,8 +29,8 @@
         </div>
 
         <div class="mb-3">
-          <label for="documentInventory" class="form-label">Inventario documental</label>
-          <input type="text" class="form-control" id="documentInventory">
+          <label for="DocumentInventoryReceive" class="form-label">Inventario documental</label>
+          <input type="text" class="form-control" id="DocumentInventoryReceive">
         </div>
 
         <div class="mb-3">
@@ -45,7 +45,7 @@
 
         <h1>Vista previa de los documentos</h1>
 
-        <button type="submit" class="btn btn-success ReceiveButton">Archivar</button>
+        <button type="submit" class="btn btn-success ReceiveButton mx-3">Archivar</button>
         <button type="submit" class="btn btn-success ReceiveButton mx-3">Cancelar</button>
         <button type="submit" class="btn btn-success ReceiveButton mx-3">Inicio</button>
 

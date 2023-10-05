@@ -5,20 +5,20 @@
         <div class="row mt-3">
             <div class="col-6">
                 <div class="mb-3">
-                    <label for="documentType" class="form-label">Tipo de documento</label>
+                    <label class="form-label">Tipo de documento</label>
                     <DocumentTypes></DocumentTypes>
                 </div>
                 <div class="mb-3">
-                    <label for="documentName" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="documentName">
+                    <label for="documentNameConsult" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="documentNameConsult">
                 </div>
                 <div class="mb-3">
-                    <label for="documentCode" class="form-label">Código</label>
-                    <input type="text" class="form-control" id="documentCode">
+                    <label for="documentCodeConsult" class="form-label">Código</label>
+                    <input type="text" class="form-control" id="documentCodeConsult">
                 </div>
 
                 <div class="mb-3">
-                    <label for="productionUnit" class="form-label">Dependencia Productora</label>
+                    <label class="form-label">Dependencia Productora</label>
                     <DependencySelector></DependencySelector>
                 </div>
 

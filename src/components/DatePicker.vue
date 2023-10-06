@@ -1,6 +1,6 @@
 <template>
     <div>
-      <input type="date" v-model="selectedDate">
+      <input type="date" v-model="selectedDate" class="form-control">
     </div>
   </template>
   

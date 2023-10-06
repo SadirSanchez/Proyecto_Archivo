@@ -2,7 +2,7 @@
     <h1 class="text-success text-center mt-3">Consultar Documentos</h1>
 
     <div class="container-fluid">
-        <div class="row mt-3">
+        <div class="row mt-3 justify-content-center">
             <div class="col-6">
                 <div class="mb-3">
                     <label class="form-label">Tipo de documento</label>
@@ -37,11 +37,6 @@
                     <li class="list-group-item">Documento 4</li>
                     <li class="list-group-item">Documento ...</li>
                 </ul>
-
-            </div>
-            <div class="col-6">
-
-                <h1>Vista previa de los documentos</h1>
 
             </div>
         </div>

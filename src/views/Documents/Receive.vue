@@ -2,7 +2,7 @@
   <h1 class="text-success text-center mt-3">Recepción de Documentos</h1>
 
   <div class="container-fluid">
-    <div class="row mt-3">
+    <div class="row mt-3 justify-content-center">
       <div class="col-6">
         <div class="mb-3">
 
@@ -25,10 +25,10 @@
 
         <div>
           <label class="form-label">Fecha de elaboración</label>
-          <date-picker class="my-3"></date-picker>
+          <date-picker></date-picker>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 mt-3">
           <label for="DocumentInventoryReceive" class="form-label">Inventario documental</label>
           <input type="text" class="form-control" id="DocumentInventoryReceive">
         </div>
@@ -37,17 +37,15 @@
           <label for="physicalLocation" class="form-label">Ubicación en físico</label>
           <input type="text" class="form-control" id="physicalLocation">
         </div>
-      </div>
-      <div class="col-6">
 
-        <!--Este boton es una imagen que represente la subida de los documentos a la nube-->
-        <button type="submit" class="btn btn-success mt-5">Cargar documento</button>
+        <div class="progress mb-3" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+          aria-valuemax="100">
+          <div class="progress-bar" style="width: 25%">25%</div>
+        </div>
 
-        <h1>Vista previa de los documentos</h1>
-
-        <button type="submit" class="btn btn-success ReceiveButton mx-3">Archivar</button>
-        <button type="submit" class="btn btn-success ReceiveButton mx-3">Cancelar</button>
-        <button type="submit" class="btn btn-success ReceiveButton mx-3">Inicio</button>
+        <button type="submit" class="btn btn-success ReceiveButton">Cargar documento</button>
+        <button type="submit" class="btn btn-success ReceiveButton">Archivar</button>
+        <button type="submit" class="btn btn-success ReceiveButton">Cancelar</button>
 
       </div>
     </div>

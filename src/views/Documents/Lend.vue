@@ -1,9 +1,9 @@
 <template>
     <h1 class="text-success text-center mt-3">Prestar Documentos</h1>
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row mt-3 justify-content-center">
-            <div class="col-6  ">
+            <div class="col-md-6 col-sm-12">
 
                 <div class="mb-3">
                     <label class="form-label">Tipo de documento</label>

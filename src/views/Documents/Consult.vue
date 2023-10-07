@@ -38,6 +38,8 @@
                     <li class="list-group-item">Documento ...</li>
                 </ul>
 
+                <DocumentModel :visible="false" variant="success"></DocumentModel>
+
             </div>
         </div>
     </div>
@@ -46,13 +48,14 @@
    
 <script>
 
-
+import DocumentModel from '@/components/DocumentModel.vue';
 
 export default {
 
     name: "ConsultView",
 
     components: {
+        DocumentModel
     },
 
     data() {
@@ -64,7 +67,7 @@ export default {
 
     methods: {
 
-    },
+        },
 };
 </script>
      

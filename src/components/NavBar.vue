@@ -68,7 +68,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li>
-                <RouterLink to="/alertasyestadisticas/alertas" class="dropdown-item" href="#">Alertas</RouterLink>
+                <RouterLink to="/alertasyestadisticas/documentnotifications" class="dropdown-item" href="#">Notificaciones</RouterLink>
               </li>
               <li>
                 <RouterLink to="/alertasyestadisticas/estadisticas" class="dropdown-item" href="#">Estadisticas</RouterLink>

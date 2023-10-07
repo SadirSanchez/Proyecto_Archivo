@@ -8,7 +8,7 @@
 
 export default {
 
-    name: "AlertsView",
+    name: " DocumentNotificationsView",
 
     components: {
     },

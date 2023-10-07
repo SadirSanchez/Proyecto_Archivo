@@ -11,7 +11,7 @@ import Register from '@/views/Users/Register.vue'
 import ConsultUsers from '@/views/Users/ConsultUsers.vue'
 import ChangePassword from '@/views/Users/ChangePassword.vue'
 //Import alertsandstatistics
-import Alerts from '@/views/alertsandstatistics/Alerts.vue'
+import DocumentNotifications from '@/views/alertsandstatistics/DocumentNotifications.vue'
 import Statistics from '@/views/alertsandstatistics/Statistics.vue'
 
 const router = createRouter({
@@ -91,13 +91,13 @@ const router = createRouter({
     {
       path: '/alertasyestadisticas',
       name: 'alertsandstatistics',
-      redirect: '/alertasyestadisticas/alertas',
-      component: Alerts, // Cambia el componente del padre a Alerts
+      redirect: '/alertasyestadisticas/documentnotifications',
+      component: DocumentNotifications, // Cambia el componente del padre a Alerts
       children: [
         {
-          path: '/alertasyestadisticas/alertas', // Cambia el camino a 'alertas'
-          name: 'alerts', // Cambia el nombre a 'alerts'
-          component: Alerts,
+          path: '/alertasyestadisticas/documentnotifications', // Cambia el camino a 'alertas'
+          name: 'documentnotifications', // Cambia el nombre a 'alerts'
+          component: DocumentNotifications,
         }
       ]
     },

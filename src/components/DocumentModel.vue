@@ -4,11 +4,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Documento</h5>
                     <button type="button" class="btn-close" @click="openCloseFun()" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <slot></slot>
+                    <slot>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est incidunt veniam eaque quisquam,
+                            quam perferendis dignissimos hic doloribus numquam pariatur illo laudantium ipsam iste! Aperiam
+                            quidem voluptatum voluptatem nostrum numquam?</p>
+                    </slot>
                 </div>
                 <div class="modal-footer">
                     <button type="button" @click="openCloseFun()" :class="'btn btn-' + variant">Close</button>
@@ -18,7 +22,7 @@
         </div>
     </div>
 
-    <button class="mt-3" type="button" @click="openCloseFun()" :class="'btn btn-' + variant">Open Modal</button>
+    <button class="mt-3" type="button" @click="openCloseFun()" :class="'btn btn-' + variant">Vista previa</button>
 </template>
 
 <script>

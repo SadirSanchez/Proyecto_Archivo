@@ -68,12 +68,14 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li>
-                <RouterLink to="/alertasyestadisticas/documentnotifications" class="dropdown-item" href="#">Notificaciones</RouterLink>
+                <RouterLink to="/alertasyestadisticas/documentnotifications" class="dropdown-item" href="#">Notificaciones
+                </RouterLink>
               </li>
               <li>
-                <RouterLink to="/alertasyestadisticas/estadisticas" class="dropdown-item" href="#">Estadisticas</RouterLink>
+                <RouterLink to="/alertasyestadisticas/estadisticas" class="dropdown-item" href="#">Estadisticas
+                </RouterLink>
               </li>
-              
+
             </ul>
           </li>
 
@@ -81,6 +83,19 @@
             <a class="nav-link" href="#">Manual</a>
           </li>
         </ul>
+      </div>
+    </div>
+
+    <div class="ml-auto" style="margin-right: 60px;">
+      <div class="input-group">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Opciones</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Cambiar contraseña</a>
+            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>

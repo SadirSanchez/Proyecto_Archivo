@@ -43,9 +43,9 @@
           <div class="progress-bar" style="width: 25%">25%</div>
         </div>
 
-        <button type="submit" class="btn btn-success ReceiveButton">Cargar documento</button>
-        <button type="submit" class="btn btn-success ReceiveButton">Archivar</button>
-        <button type="submit" class="btn btn-success ReceiveButton">Cancelar</button>
+        <button type="submit" class="btn btn-info text-white  ReceiveButton">Cargar documento</button>
+        <button type="submit" class="btn btn-primary ReceiveButton">Archivar</button>
+        <button type="submit" class="btn btn-danger ReceiveButton">Cancelar</button>
 
       </div>
     </div>

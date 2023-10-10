@@ -27,8 +27,8 @@
                     <date-picker class="my-3"></date-picker>
                 </div>
 
-                <button type="submit" class="btn btn-success">Consultar</button>
-                <button type="submit" class="btn btn-success mx-3">Regresar</button>
+                <button type="submit" class="btn btn-primary">Consultar</button>
+                <button type="submit" class="btn btn-danger mx-3">Cancelar</button>
 
                 <ul class="list-group mt-4">
                     <li class="list-group-item">Documento 1</li>
@@ -38,7 +38,7 @@
                     <li class="list-group-item">Documento ...</li>
                 </ul>
 
-                <DocumentModel :visible="false" variant="success"></DocumentModel>
+                <DocumentModel :visible="false" variant="primary"></DocumentModel>
 
             </div>
         </div>

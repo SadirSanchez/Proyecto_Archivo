@@ -88,7 +88,7 @@
             aria-haspopup="true" aria-expanded="false">Opciones</button>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Cambiar contraseña</a>
-            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+            <router-link to="/login" class="nav-link" @click="logout">Cerrar Sesión</router-link>
           </div>
         </div>
       </div>
@@ -103,5 +103,13 @@ export default {
   components: {
     RouterLink,
   },
+  methods: {
+    logout() {
+      // Aquí puedes agregar la lógica de cierre de sesión si es necesario
+
+      // Redirigir al usuario a la vista Login.vue
+      this.$router.push({ name: 'Login' }); // Asegúrate de que el nombre de la ruta sea 'Login'
+    }
+  }
 };
 </script>

@@ -1,27 +1,43 @@
 <template>
-
-<h1 class="text-success text-center mt-3">Archivo</h1>
-
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="height: 100vh;">
+            <div class="col-md-3">
+                <h1 class="text-success text-center mb-4">Iniciar Sesión</h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="userLogin" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="userLogin">
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordLogin" class="form-label">Contraseña</label>
+                        <input type="password" id="passwordLogin" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </template>
+
 
 <script>
 
-export default{
+export default {
 
-    name:'LoginView',
+    name: 'LoginView',
 
-    components:{
+    components: {
 
     },
 
-    data(){
-        return{
+    data() {
+        return {
 
         };
 
     },
 
-    methods:{
+    methods: {
 
     }
 };

@@ -98,17 +98,16 @@
 
 <script>
 import { RouterLink } from "vue-router";
+
 export default {
   name: "NavBar",
+
   components: {
     RouterLink,
   },
   methods: {
     logout() {
-      // Aquí puedes agregar la lógica de cierre de sesión si es necesario
-
-      // Redirigir al usuario a la vista Login.vue
-      this.$router.push({ name: 'Login' }); // Asegúrate de que el nombre de la ruta sea 'Login'
+      this.$router.push({ name: 'Login' });
     }
   }
 };

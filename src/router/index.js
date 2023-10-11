@@ -9,7 +9,6 @@ import Return from '@/views/Documents/Return.vue'
 // Import users
 import Register from '@/views/Users/Register.vue'
 import ConsultUsers from '@/views/Users/ConsultUsers.vue'
-import ChangePassword from '@/views/Users/ChangePassword.vue'
 //Import alertsandstatistics
 import DocumentNotifications from '@/views/alertsandstatistics/DocumentNotifications.vue'
 import Statistics from '@/views/alertsandstatistics/Statistics.vue'
@@ -78,12 +77,6 @@ const router = createRouter({
       path: '/usuarios/consultarUsuarios',
       name: 'UsersconsultUsers',
       component: ConsultUsers,
-    },
-
-    {
-      path: '/usuarios/cambiarContraseña',
-      name: 'UsersChangePassword',
-      component: ChangePassword,
     },
 
     //Router alertsandstatistics

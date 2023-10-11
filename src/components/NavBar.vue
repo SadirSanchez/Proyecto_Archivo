@@ -52,11 +52,6 @@
                 <RouterLink to="/usuarios/consultarUsuarios" class="dropdown-item" href="#">Consultar usuarios
                 </RouterLink>
               </li>
-
-              <li>
-                <RouterLink to="/usuarios/cambiarContraseña" class="dropdown-item" href="#">Cambiar Contraseña
-                </RouterLink>
-              </li>
             </ul>
           </li>
 

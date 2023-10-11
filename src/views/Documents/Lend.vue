@@ -35,7 +35,7 @@
                     <date-picker class="my-3"></date-picker>
                 </div>
 
-                <button type="submit" class="btn btn-success">Prestar</button>
+                <button type="submit" class="btn btn-primary">Prestar</button>
 
             </div>
         </div>

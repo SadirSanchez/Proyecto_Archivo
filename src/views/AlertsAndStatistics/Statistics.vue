@@ -1,5 +1,5 @@
 <template>
-    <h1>Prueba estadisticas</h1>
+    <h1>Se profundizara luego de avanzar con documentos y usuarios</h1>
 </template>
      
    

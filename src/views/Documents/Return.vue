@@ -39,7 +39,7 @@
                     </label>
                 </div>
 
-                <button type="submit" class="btn btn-success">Recibir</button>
+                <button type="submit" class="btn btn-primary">Recibir</button>
 
             </div>
         </div>

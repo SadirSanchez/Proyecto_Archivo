@@ -29,37 +29,9 @@ export default {
   <div>
     <!-- Mostramos la barra de navegación solo si currentPage tiene un valor y si la página actual no es 'Login'-->
     <NavBar v-if="currentPage && currentPage != 'Login'" />
+    
     <!-- Usamos RouterView para mostrar la vista de la página actual-->
     <RouterView />
-
-    <main>
-      <div class="row mt-3">
-        <div class="col-sm-12 col-md-6">
-          <div class="card text-success mx-3 " >
-            <div class="card-body ">
-              <h5 class="card-title">Plan Institucional de archivos PINAR</h5>
-            </div>
-            <div class="card-footer">
-              <a href="../public/entityFiles/58558_7plan-institucional-de-archivo-pinar-2023.pdf" target="_blank"
-                class="text-black">Pinar 2023</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-6">
-          <div class="card text-success mx-3">
-            <div class="card-body">
-              <h5 class="card-title">Tabla de Retención Documental TRD</h5>
-            </div>
-            <div class="card-footer">
-              <a href="../public/entityFiles/TRD DE LA ALCALDIA DE PLANETA RICA (1).xlsx" target="_blank"
-                class="text-black">TRD
-                2023</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
 
     <!-- Mostramos el pie de página sólo si la página actual no es 'Login'-->
     <Footer v-if="currentPage != 'Login'" />

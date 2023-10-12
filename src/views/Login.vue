@@ -1,8 +1,9 @@
 <template>
+    
     <div class="container">
-        <div class="row justify-content-center align-items-center" style="height: 100vh;">
+        <div class="row justify-content-center align-items-center" style="height: 70vh;">
             <div class="col-md-3">
-                <h1 class="text-success text-center mb-4">Iniciar Sesión</h1>
+                <h1 class="text-success text-center mb-4">ARCHIVO</h1>
                 <form>
                     <div class="mb-3">
                         <label for="userLogin" class="form-label">Usuario</label>

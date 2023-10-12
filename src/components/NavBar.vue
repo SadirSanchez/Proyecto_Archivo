@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">LOGO </a>
+      <a class="navbar-brand" href="#"><img class="logo" src="@/assets/Img/Escudo.png" alt="Logo" width="30" height="30"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -88,7 +88,7 @@
             aria-haspopup="true" aria-expanded="false">Opciones</button>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Cambiar contraseña</a>
-            <router-link to="/login" class="nav-link" @click="logout">Cerrar Sesión</router-link>
+            <a href="/login" class="nav-link" @click="logout">Cerrar Sesión</a>
           </div>
         </div>
       </div>

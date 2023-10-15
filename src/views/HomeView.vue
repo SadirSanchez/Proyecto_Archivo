@@ -9,6 +9,7 @@ export default {
     <div class="row mt-3">
       <div class="col-sm-12 col-md-6">
         <div class="card text-success mx-3 ">
+          <img src="../assets/Img/Pinar.jpg" class="card-img-top" :height="'150px'" alt="Pinar">
           <div class="card-body ">
             <h5 class="card-title">Plan Institucional de archivos PINAR</h5>
           </div>
@@ -21,6 +22,7 @@ export default {
 
       <div class="col-sm-12 col-md-6">
         <div class="card text-success mx-3">
+          <img src="../assets/Img/TRD.png" class="card-img-top" :height="'150px'" alt="Pinar">
           <div class="card-body">
             <h5 class="card-title">Tabla de Retención Documental TRD</h5>
           </div>

@@ -10,6 +10,7 @@ import Return from '@/views/Documents/Return.vue'
 // Import users
 import Register from '@/views/Users/Register.vue'
 import ConsultUsers from '@/views/Users/ConsultUsers.vue'
+import ChangePassword from '@/views/Users/ChangePassword.vue'
 //Import alertsandstatistics
 import DocumentNotifications from '@/views/alertsandstatistics/DocumentNotifications.vue'
 import Statistics from '@/views/alertsandstatistics/Statistics.vue'
@@ -25,12 +26,18 @@ const router = createRouter({
     },
 
     {
+      path: '/ChangePassword',
+      name: 'ChangePassword',
+      component: ChangePassword
+    },
+
+    {
       path: '/login',
       name: 'Login',
       component: LoginView
     },
 
-     //Router document
+    //Router document
 
     {
       path: '/documentos',
@@ -103,9 +110,9 @@ const router = createRouter({
     },
 
     {
-        path: '/alertasyestadisticas/estadisticas', 
-        name: 'Statistics', 
-        component: Statistics,
+      path: '/alertasyestadisticas/estadisticas',
+      name: 'Statistics',
+      component: Statistics,
     },
 
   ],

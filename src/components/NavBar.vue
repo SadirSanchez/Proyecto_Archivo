@@ -87,8 +87,10 @@
           <button class="btn btn text-white-50 dropdown-toggle" type="button" data-bs-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Opciones</button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Cambiar contraseña</a>
             <a href="/login" class="nav-link" @click="logout">Cerrar Sesión</a>
+            <RouterLink to="/ChangePassword" class="dropdown-item" href="../views/Users/ChangePassword.vue">Cambiar
+              Contraseña
+            </RouterLink>
           </div>
         </div>
       </div>

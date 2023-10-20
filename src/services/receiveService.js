@@ -1,17 +1,17 @@
 import axios from 'axios';
+import config from './config';
 
 export default {
-   async saveReceive(data) {
-       
+    saveReceive(data) {
+        return new Promise((resolve, reject) => {
+            axios.post(config.app_url+'proyecto-archivo-sadir.php', data)
+            .then((response) => {
+                resolve(response.data)
+            })
+            .catch((error) => {
+                reject(error);
+            });
 
-            await axios.post("http://localhost/proyecto-archivo-back-end/controllers/receive/ReceiveController.php", data)
-                .then(res => {
-                    
-                })
-                .catch(err => {
-
-                })
-
-    
+        })
     }
 }

@@ -1,0 +1,17 @@
+.ReceiveButton {
+    margin-right: 15px;
+}
+
+.backgroundLogin-container {
+    background: url("./Img/Archivador.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+footer{
+    margin-top: 150px;
+    color: grey;
+}

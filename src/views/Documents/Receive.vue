@@ -38,12 +38,16 @@
           <input type="text" class="form-control" id="physicalLocation">
         </div>
 
+        <div class="mb-3">
+          <label for="loadDocument" class="form-label">Cargar documento</label>
+          <input type="file" multiple class="form-control" id="loadDocument">
+        </div>
+
         <div class="progress mb-3" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
           aria-valuemax="100">
           <div class="progress-bar" style="width: 25%">25%</div>
         </div>
 
-        <button type="submit" class="btn btn-info text-white  ReceiveButton">Cargar documento</button>
         <button type="submit" class="btn btn-primary ReceiveButton">Archivar</button>
         <button type="submit" class="btn btn-danger ReceiveButton">Cancelar</button>
 

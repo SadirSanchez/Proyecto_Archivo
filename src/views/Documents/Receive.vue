@@ -16,7 +16,7 @@
         </div>
         <div class="mb-3">
           <label for="documentNameReceive" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="documentNameReceive">
+          <input v-model="form.name" type="text" class="form-control" id="documentNameReceive">
         </div>
         <div class="mb-3">
           <label for="documentCodeReceive" class="form-label">Código</label>
@@ -38,44 +38,31 @@
           <input type="text" class="form-control" id="physicalLocation">
         </div>
 
+        <div class="mb-3">
+          <label for="physicalLocation" class="form-label">Cargar documentos</label>
+          <input type="file" multiple class="form-control" id="physicalLocation">
+        </div>
+
+
         <div class="progress mb-3" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
           aria-valuemax="100">
           <div class="progress-bar" style="width: 25%">25%</div>
         </div>
 
-        <button type="submit" class="btn btn-info text-white  ReceiveButton">Cargar documento</button>
-        <button type="submit" class="btn btn-primary ReceiveButton">Archivar</button>
+        <!-- <button type="submit" class="btn btn-info text-white  ReceiveButton" >Cargar documento</button> -->
+        <button type="submit" class="btn btn-primary ReceiveButton" @click="saveReceive()">Archivar</button>
         <button type="submit" class="btn btn-danger ReceiveButton">Cancelar</button>
 
       </div>
     </div>
   </div>
-
-
-  <!--
-    <div class="container-fluid">
-    <div class="row mt-5">
-      <div class="col-6">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" v-model="form.name" >
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Código</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="form.code"></textarea>
-
-          <button class="btn btn-primary" @click="saveReceive()">Guardar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
 </template>
 
 <script>
 
 
 import receiveService from "@/services/receiveService.js";
+import axios from 'axios';
 
 export default {
 
@@ -97,6 +84,8 @@ export default {
 
     saveReceive() {
       receiveService.saveReceive(this.form)
+      .then(res=>{
+      })
     }
 
   },

@@ -8,11 +8,11 @@
 
           <div class="mb-3">
             <label for="productionUnit" class="form-label">Dependencia Productora</label>
-            <DependencySelector></DependencySelector>
+            <DependencySelector @selected="updateDependency"></DependencySelector>
           </div>
 
           <label for="documentType" class="form-label">Tipo de documento</label>
-          <DocumentTypes></DocumentTypes>
+          <DocumentTypes @selected="updateDocumentType"></DocumentTypes>
         </div>
         <div class="mb-3">
           <label for="documentNameReceive" class="form-label">Nombre</label>
@@ -20,22 +20,22 @@
         </div>
         <div class="mb-3">
           <label for="documentCodeReceive" class="form-label">Código</label>
-          <input type="text" class="form-control" id="documentCodeReceive">
+          <input type="text" class="form-control" id="documentCodeReceive" v-model="form.code">
         </div>
 
         <div>
           <label class="form-label">Fecha de elaboración</label>
-          <date-picker></date-picker>
+          <date-picker @selected="updateselectDatePicker"></date-picker>
         </div>
 
         <div class="mb-3 mt-3">
           <label for="DocumentInventoryReceive" class="form-label">Inventario documental</label>
-          <input type="text" class="form-control" id="DocumentInventoryReceive">
+          <input type="text" class="form-control" id="DocumentInventoryReceive" v-model="form.inventory">
         </div>
 
         <div class="mb-3">
           <label for="physicalLocation" class="form-label">Ubicación en físico</label>
-          <input type="text" class="form-control" id="physicalLocation">
+          <input type="text" class="form-control" id="physicalLocation" v-model="form.location">
         </div>
 
         <div class="mb-3">
@@ -73,19 +73,33 @@ export default {
   data() {
     return {
       form: {
+        dependency: "",
+        documentType: "",
         name: "",
         code: "",
+        selectedDatePicker: "",
+        inventory: "",
+        location: "",
       }
     };
   },
 
   methods: {
+    updateDependency(selectedDependency) {
+      this.form.dependency = selectedDependency; // Actualizar form.dependency
+    },
 
+    updateDocumentType(selectedDocumentType) {
+      this.form.documentType = selectedDocumentType; // Actualizar form.documentType
+    },
     saveReceive() {
       receiveService.saveReceive(this.form)
-      .then(res=>{
-      })
-    }
+        .then(res => {
+        })
+    },
+    updateselectDatePicker(selectedDatePicker) {
+      this.form.selectedDatePicker = selectedDatePicker; // Actualizar form.selectedDate
+    },
 
   },
 };

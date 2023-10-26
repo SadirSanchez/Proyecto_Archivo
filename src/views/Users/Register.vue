@@ -7,24 +7,24 @@
       <div class="col-6">
         <div class="mb-3">
           <label for="nameUser" class="form-label">Nombres</label>
-          <input type="text" class="form-control" id="nameUser">
+          <input v-model="form.nameUser" type="text" class="form-control" id="nameUser">
         </div>
         <div class="mb-3">
           <label for="tipoIdentificacion" class="form-label">Tipo de identificación</label>
-          <select id="tipoIdentificacion" class="form-select">
+          <select id="tipoIdentificacion" class="form-select" v-model="form.typeId">
             <option selected>Seleccionar</option>
-            <option value="actas">CC</option>
-            <option value="resoluciones">TI</option>
-            <option value="contratos">CE</option>
+            <option value="CC">CC</option>
+            <option value="TI">TI</option>
+            <option value="CE">CE</option>
           </select>
         </div>
         <div class="mb-3">
           <label for="EmailUser" class="form-label">Correo Electronico</label>
-          <input type="text" class="form-control" id="EmailUser">
+          <input type="text" class="form-control" id="EmailUser" v-model="form.eMail">
         </div>
         <div class="mb-3">
           <label class="form-label">Dependencia</label>
-          <DependencySelector></DependencySelector>
+          <DependencySelector @selected="updateDependency" ></DependencySelector>
         </div>
 
       </div>
@@ -32,34 +32,37 @@
       <div class="col-6">
         <div class="mb-3">
           <label for="lastNameUser" class="form-label">Apellidos</label>
-          <input type="text" class="form-control" id="lastNameUser">
+          <input type="text" class="form-control" id="lastNameUser" v-model="form.lastName">
         </div>
         <div class="mb-3">
           <label for="iDuser" class="form-label">Número de identificación</label>
-          <input type="number" class="form-control" id="iDuser">
+          <input type="number" class="form-control" id="iDuser" v-model="form.iDuser">
         </div>
         <div class="mb-3">
           <label for="phoneUser" class="form-label">Teléfono</label>
-          <input type="number" class="form-control" id="phoneUser">
+          <input type="number" class="form-control" id="phoneUser" v-model="form.phone">
         </div>
         <div class="mb-3">
           <label for="rolUser" class="form-label">Rol</label>
-          <select id="rolUser" class="form-select">
+          <select id="rolUser" class="form-select" v-model="form.role">
             <option selected>Seleccionar</option>
-            <option value="actas">Administrador</option>
-            <option value="resoluciones">Consultor</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Consultor">Consultor</option>
           </select>
         </div>
       </div>
 
     </div>
-    <button type="submit" class="btn btn-primary">Registrar usuario</button>
+    <button type="submit" class="btn btn-primary" @click="saveUsers()">Registrar usuario</button>
   </div>
 </template>
 
   
 
 <script>
+
+import usersService from "@/services/usersService.js";
+import axios from 'axios';
 
 
 export default {
@@ -72,10 +75,33 @@ export default {
   data() {
     return {
 
+      form: {
+        nameUser: "",
+        lastName:"",
+        iDuser:"",
+        dependency:"",
+        eMail:"",
+        phone:"",
+        typeId:"",
+        role:"",
+       
+      }
+
     };
+    
   },
 
   methods: {
+
+    saveUsers() {
+      usersService.saveUsers(this.form)
+        .then(res => {
+        })
+    },
+
+    updateDependency(selectedDependency) {
+      this.form.dependency = selectedDependency; // Actualizar form.dependency
+    },
 
   },
 };

@@ -1,63 +1,66 @@
 <template>
+  <div>
+    <h1 class="text-success text-center mt-3">Consultar usuario</h1>
 
-<h1 class="text-success text-center mt-3">Consultar usuario</h1>
-
-<div class="container">
-  <div class="row mt-5">
-
-    <div class="col-6">
-      <div class="mb-3">
-        <label for="nameUser" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="nameUser">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="nameUser" class="form-label">Nombre</label>
+            <input v-model="search.nameUser" type="text" class="form-control" id="nameUser">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="iDuser" class="form-label">Número de identificación</label>
+            <input v-model="search.iDuser" type="number" class="form-control" id="iDuser">
+          </div>
+        </div>
       </div>
+      <button @click="fetchUsers" class="btn btn-primary">Consultar usuario</button>
     </div>
 
-    <div class="col-6">
-      <div class="mb-3">
-        <label for="iDuser" class="form-label">Número de identificación</label>
-        <input type="number" class="form-control" id="iDuser">
-      </div>
+    <div class="container mt-3">
+      <ul class="list-group">
+        <li class="list-group-item" v-for="user in users" :key="user.Id">
+          {{ user.NameUser }}
+          {{ user.LastName }}
+        </li>
+      </ul>
     </div>
 
+    <div class="container mt-3">
+      <button type="submit" class="btn btn-info">Modificar</button>
+      <button type="submit" class="btn btn-danger mx-3">Eliminar</button>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary">Consultar usuario</button>
-</div>
-
-<div class="container">
-  <ul class="list-group mt-3">
-  <li class="list-group-item">Usuario 1</li>
-  <li class="list-group-item">Usuario 2</li>
-  <li class="list-group-item">Usuario 3</li>
-  <li class="list-group-item">Usuario 4</li>
-  <li class="list-group-item">Usuario..</li>
-</ul>
-
-<button type="submit" class="btn btn-info mt-3">Modificar</button>
-<button type="submit" class="btn btn-danger mt-3 mx-3">Eliminar</button>
-</div>
 </template>
-     
-   
-     <script>
-     
-     
-     export default {
-     
-       name: "ConsultUsersView",
-     
-       components: {
-       },
-     
-       data() {
-         return {
-   
-         };
-       },
-     
-       methods: {
-     
-       },
-     };
-     </script>
-     
-     <style scoped></style>
+
+<script>
+import config from "@/services/config.js";
+import axios from 'axios';
+
+export default {
+  name: "ConsultUsersView",
+  data() {
+    return {
+      search: {
+        nameUser: "",
+        iDuser: null,
+      },
+      users: [],
+    };
+  },
+  methods: {
+    fetchUsers() {
+      // Realizar una solicitud al servidor para obtener usuarios
+      // Usaremos axios para esto
+      const apiUrl = config.app_url + 'users/ConsultUsers.php';
+      axios.post(apiUrl, this.search).then((response) => {
+        this.users = response.data;
+      });
+    },
+  },
+};
+</script>
+<style scoped></style>

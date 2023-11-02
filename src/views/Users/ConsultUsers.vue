@@ -53,8 +53,7 @@ export default {
   },
   methods: {
     fetchUsers() {
-      // Realizar una solicitud al servidor para obtener usuarios
-      // Usaremos axios para esto
+      // Se realiza solicitud al servidor para obtener usuarios
       const apiUrl = config.app_url + 'users/ConsultUsers.php';
       axios.post(apiUrl, this.search).then((response) => {
         this.users = response.data;

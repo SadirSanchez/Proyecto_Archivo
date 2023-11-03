@@ -11,7 +11,10 @@
           <label for="passwordLogin" class="form-label">Contraseña</label>
           <input type="password" id="passwordLogin" class="form-control" v-model="form.password">
         </div>
-        <button type="submit" class="btn btn-primary btn-block" @click="login()">Ingresar</button>
+        <div v-show="showError" class="alert alert-danger" role="alert">
+          Credenciales incorrectas!
+        </div>
+        <button type="button" class="btn btn-primary btn-block" @click="login()">Ingresar</button>
       </div>
     </div>
   </div>
@@ -33,6 +36,8 @@ export default {
   data() {
     return {
 
+      showError: false,
+
       form: {
         nameUser: "",
         password: "",
@@ -48,13 +53,23 @@ export default {
     login() {
       loginService.login(this.form)
         .then(res => {
-          // Con la conexión exitosa se redirige al usuario a la página de inicio
-          this.$router.push({ name: 'home' });
+
+          if (res === "Credenciales inválidas") {
+            this.showError = true;
+          } else {
+            this.createSesion()
+            this.$router.push({ name: 'home' });  // Con la conexión exitosa se redirige al usuario a la página de inicio
+          }
+
         })
         .catch(error => {
           console.error(error); // Maneja errores de la solicitud
         });
     },
+
+    createSesion() {
+      localStorage.setItem('userSesion', this.form.nameUser)
+    }
 
   },
 };

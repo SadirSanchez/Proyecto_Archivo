@@ -19,9 +19,23 @@ export default {
       currentPage() {
        return this.$route.name; // Se retorna el nombre de la ruta actual
       } 
+  },
+  watch:{
+    currentPage(newValue){
+      
+      if(localStorage.getItem('userSesion') && newValue === 'Login'){
+        this.$router.push({ name: 'home' });
+      }
+
+      if(newValue !== 'Login' && !localStorage.getItem('userSesion')) {
+        this.$router.push({ name: 'Login' });
+      }
+    }
   }
 };
+
 </script>
+
 
 <template>
   <div>

@@ -109,6 +109,7 @@ export default {
   },
   methods: {
     logout() {
+      localStorage.removeItem('userSesion')
       this.$router.push({ name: 'Login' });
     }
   }

@@ -12,15 +12,13 @@ export default {
   },
   data() {
     return {
-      currentPage: null, // Inicializamos la variable currenPage como nula
     };
   },
-  created() {
-    // En el ciclo de vida "created", accedemos a la información de la ruta actual y actualizamos currentPage 
-    // despúes de un retraso de 100 milisegundos
-    setTimeout(() => {
-      this.currentPage = this.$route.name; // Actualizamos currenPage con el nombre de la ruta actual
-    }, 100)
+  computed: {
+    
+      currentPage() {
+       return this.$route.name; // Se retorna el nombre de la ruta actual
+      } 
   }
 };
 </script>
@@ -28,13 +26,13 @@ export default {
 <template>
   <div>
     <!-- Mostramos la barra de navegación solo si currentPage tiene un valor y si la página actual no es 'Login'-->
-    <NavBar v-if="currentPage && currentPage != 'Login'" />
+    <NavBar v-if="currentPage && currentPage !== 'Login'" />
     
     <!-- Usamos RouterView para mostrar la vista de la página actual-->
     <RouterView />
 
     <!-- Mostramos el pie de página sólo si la página actual no es 'Login'-->
-    <Footer v-if="currentPage != 'Login'" />
+    <Footer v-if="currentPage !== 'Login'" />
 
   </div>
 </template>

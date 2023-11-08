@@ -24,6 +24,7 @@
 
 import loginService from "@/services/loginService.js";
 import axios from 'axios';
+import moment from 'moment';
 
 
 export default {
@@ -68,7 +69,12 @@ export default {
     },
 
     createSesion() {
-      localStorage.setItem('userSesion', this.form.nameUser)
+      const sesion = {
+        email: this.form.nameUser,
+        createat: moment().format('YYYYMMDD HH:mm:ss'),
+      };
+
+      localStorage.setItem('userSesion', JSON.stringify(sesion))
     }
 
   },

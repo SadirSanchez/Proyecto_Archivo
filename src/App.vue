@@ -3,6 +3,7 @@
 import { RouterView } from 'vue-router'
 import NavBar from '@/components/NavBar.vue';
 import Footer from '@/components/Footer.vue';
+import moment from 'moment';
 
 export default {
   components: {
@@ -12,24 +13,60 @@ export default {
   },
   data() {
     return {
+      timeSessionActive: true
     };
   },
-  computed: {
-    
-      currentPage() {
-       return this.$route.name; // Se retorna el nombre de la ruta actual
-      } 
-  },
-  watch:{
-    currentPage(newValue){
+
+  methods: {
+    validateTimeSesion() {
+      const sessionInfo = JSON.parse(localStorage.getItem('userSesion'));
+
+      if (sessionInfo) {
+        const createAt = moment(sessionInfo.createat, 'YYYYMMDD HH:mm:ss'); // Parsea la fecha almacenada en localStorage
+        const actualDateTime = moment(); // Obtiene la fecha y hora actual
+
+        const diffInMinutes = actualDateTime.diff(createAt, 'minutes'); // Calcula la diferencia en minutos
+        
+        if(diffInMinutes >= 60){
+          this.timeSessionActive = false
+        }else {
+          const sesion = {
+            email: sessionInfo.email,
+            createat: moment().format('YYYYMMDD HH:mm:ss'),
+          };
+
+          localStorage.setItem('userSesion', JSON.stringify(sesion))
+        }
+        
       
-      if(localStorage.getItem('userSesion') && newValue === 'Login'){
-        this.$router.push({ name: 'home' });
+      }
+    }
+
+  },
+
+  computed: {
+    currentPage() {
+      return this.$route.name; // Se retorna el nombre de la ruta actual
+    }
+  },
+  watch: {
+    currentPage(newValue) {
+      this.validateTimeSesion()
+
+      if (!localStorage.getItem('userSesion')) {
+        if (newValue !== 'Login') this.$router.push({ name: 'Login' });
       }
 
-      if(newValue !== 'Login' && !localStorage.getItem('userSesion')) {
-        this.$router.push({ name: 'Login' });
+      if (localStorage.getItem('userSesion') && this.timeSessionActive) {
+        if (newValue === 'Login') this.$router.push({ name: 'home' });
       }
+
+      else if (!this.timeSessionActive) {
+        localStorage.removeItem('userSesion')
+        this.timeSessionActive = true
+        this.$router.push({ name: 'Login' })
+      }
+
     }
   }
 };
@@ -41,7 +78,7 @@ export default {
   <div>
     <!-- Mostramos la barra de navegación solo si currentPage tiene un valor y si la página actual no es 'Login'-->
     <NavBar v-if="currentPage && currentPage !== 'Login'" />
-    
+
     <!-- Usamos RouterView para mostrar la vista de la página actual-->
     <RouterView />
 

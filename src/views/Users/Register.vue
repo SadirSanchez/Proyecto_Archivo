@@ -26,6 +26,10 @@
           <label class="form-label">Dependencia</label>
           <DependencySelector @selected="updateDependency" ></DependencySelector>
         </div>
+        <div class="mb-3">
+          <label for="passwordUser" class="form-label">Asignar contraseña</label>
+          <input type="text" class="form-control" id="passwordUser" v-model="form.password">
+        </div>
 
       </div>
 
@@ -84,6 +88,7 @@ export default {
         phone:"",
         typeId:"",
         role:"",
+        password:"",
        
       }
 

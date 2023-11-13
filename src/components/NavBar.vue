@@ -100,6 +100,7 @@
 
 <script>
 import { RouterLink } from "vue-router";
+import loginService from '@/services/loginService';
 
 export default {
   name: "NavBar",
@@ -109,8 +110,12 @@ export default {
   },
   methods: {
     logout() {
-      localStorage.removeItem('userSesion')
+      const sesion = JSON.parse(localStorage.getItem('userSesion'));
+      loginService.deleteSesion(sesion)
+      .then(res=>{
+        localStorage.removeItem('userSesion')
       this.$router.push({ name: 'Login' });
+      })
     }
   }
 };

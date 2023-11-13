@@ -4,6 +4,7 @@ import { RouterView } from 'vue-router'
 import NavBar from '@/components/NavBar.vue';
 import Footer from '@/components/Footer.vue';
 import moment from 'moment';
+import loginService from './services/loginService';
 
 export default {
   components: {
@@ -13,7 +14,8 @@ export default {
   },
   data() {
     return {
-      timeSessionActive: true
+      isValidSesionTime: true,
+      isValidSesionTimeServer: false
     };
   },
 
@@ -22,24 +24,46 @@ export default {
       const sessionInfo = JSON.parse(localStorage.getItem('userSesion'));
 
       if (sessionInfo) {
-        const createAt = moment(sessionInfo.createat, 'YYYYMMDD HH:mm:ss'); // Parsea la fecha almacenada en localStorage
+        const createAt = moment(sessionInfo.createat, 'YYYY-MM-DD HH:mm:ss'); // Parsea la fecha almacenada en localStorage
         const actualDateTime = moment(); // Obtiene la fecha y hora actual
 
         const diffInMinutes = actualDateTime.diff(createAt, 'minutes'); // Calcula la diferencia en minutos
-        
-        if(diffInMinutes >= 60){
-          this.timeSessionActive = false
-        }else {
+
+        if (diffInMinutes >= 60) {
+          this.isValidSesionTime = false
+        } else {
           const sesion = {
             email: sessionInfo.email,
-            createat: moment().format('YYYYMMDD HH:mm:ss'),
+            createat: moment().format('YYYY-MM-DD HH:mm:ss'),
           };
+          this.validateSesionServer(sesion);
 
-          localStorage.setItem('userSesion', JSON.stringify(sesion))
         }
-        
-      
+
+
       }
+    },
+    validateSesionServer(sesion) {
+      const dataSesion = JSON.parse(localStorage.getItem('userSesion'))
+      loginService.validateSesion(dataSesion)
+      .then(res => {
+        if (res === 'Ok') {
+          this.isValidSesionTimeServer = true;
+          loginService.upDateSesion(sesion)
+          localStorage.setItem('userSesion', JSON.stringify(sesion))
+        } else {
+          this.isValidSesionTimeServer = false;
+          this.deleteSesion(sesion);
+        }
+      })
+    },
+
+    deleteSesion(sesion){
+      loginService.deleteSesion(sesion).then(res=>{
+        localStorage.removeItem('userSesion')
+        this.isValidSesionTime = true
+        this.$router.push({ name: 'Login' })
+      })
     }
 
   },
@@ -57,14 +81,12 @@ export default {
         if (newValue !== 'Login') this.$router.push({ name: 'Login' });
       }
 
-      if (localStorage.getItem('userSesion') && this.timeSessionActive) {
+      if (localStorage.getItem('userSesion') && this.isValidSesionTime) {
         if (newValue === 'Login') this.$router.push({ name: 'home' });
       }
 
-      else if (!this.timeSessionActive) {
-        localStorage.removeItem('userSesion')
-        this.timeSessionActive = true
-        this.$router.push({ name: 'Login' })
+      else if (!this.isValidSesionTime) {
+        this.deleteSesion(JSON.parse(localStorage.getItem('userSesion')));
       }
 
     }

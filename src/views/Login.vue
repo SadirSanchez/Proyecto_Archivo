@@ -71,9 +71,9 @@ export default {
     createSesion() {
       const sesion = {
         email: this.form.nameUser,
-        createat: moment().format('YYYYMMDD HH:mm:ss'),
+        createat: moment().format('YYYY-MM-DD HH:mm:ss'),
       };
-
+      loginService.upDateSesion(sesion)
       localStorage.setItem('userSesion', JSON.stringify(sesion))
     }
 

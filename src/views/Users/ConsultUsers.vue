@@ -1,38 +1,21 @@
 <template>
   <div>
-    <h1 class="text-success text-center mt-3">Consultar usuario</h1>
-
-    <div class="container">
-      <div class="row mt-5">
-        <div class="col-6">
-          <div class="mb-3">
-            <label for="nameUser" class="form-label">Nombre</label>
-            <input v-model="search.nameUser" type="text" class="form-control" id="nameUser">
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="mb-3">
-            <label for="iDuser" class="form-label">Número de identificación</label>
-            <input v-model="search.iDuser" type="number" class="form-control" id="iDuser">
-          </div>
-        </div>
-      </div>
-      <button @click="fetchUsers" class="btn btn-primary">Consultar usuario</button>
-    </div>
-
-    <div class="container mt-3">
-      <ul class="list-group">
-        <li class="list-group-item" v-for="user in users" :key="user.Id">
-          {{ user.NameUser }}
-          {{ user.LastName }}
-        </li>
-      </ul>
-    </div>
-
-    <div class="container mt-3">
-      <button type="submit" class="btn btn-info">Modificar</button>
-      <button type="submit" class="btn btn-danger mx-3">Eliminar</button>
-    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="user in users" :key="user[2]">
+          <td>{{ user[2] }}</td>
+          <td>{{ user[0] }}</td>
+          <td>{{ user[1] }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -41,25 +24,40 @@ import config from "@/services/config.js";
 import axios from 'axios';
 
 export default {
-  name: "ConsultUsersView",
   data() {
     return {
-      search: {
-        nameUser: "",
-        iDuser: null,
-      },
       users: [],
     };
   },
+
   methods: {
-    fetchUsers() {
-      // Se realiza solicitud al servidor para obtener usuarios
-      const apiUrl = config.app_url + 'users/ConsultUsers.php';
-      axios.post(apiUrl, this.search).then((response) => {
-        this.users = response.data;
-      });
-    },
+    getUsers() {
+      axios.get(config.app_url + 'users/ConsultUsers.php')
+        .then(response => {
+          this.users = response.data.split(',');
+          let tempUsers = []
+          this.users.map(item => {
+            item = item.split('-')
+            if (item.length > 1){
+              tempUsers.push(item)
+            }
+          } )
+          this.users = tempUsers;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          console.log('Response:', error.response);
+        });
+    }
   },
-};
+
+  mounted() {
+
+    this.getUsers()
+
+  }
+
+}
+
 </script>
 <style scoped></style>

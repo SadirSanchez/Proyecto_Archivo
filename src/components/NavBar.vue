@@ -45,12 +45,11 @@
 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li>
-                <RouterLink to="/usuarios/registrar" class="dropdown-item" href="#">Registrar</RouterLink>
-              </li>
-
-              <li>
-                <RouterLink to="/usuarios/consultarUsuarios" class="dropdown-item" href="#">Consultar usuarios
+                <RouterLink to="/usuarios/consultarUsuarios" class="dropdown-item" href="#">Usuarios
                 </RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/usuarios/registrar" class="dropdown-item" href="#">Registrar</RouterLink>
               </li>
             </ul>
           </li>

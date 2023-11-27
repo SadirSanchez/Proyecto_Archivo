@@ -48,7 +48,10 @@
           <div class="progress-bar" style="width: 25%">25%</div>
         </div>
 
-        <!-- <button type="submit" class="btn btn-info text-white  ReceiveButton" >Cargar documento</button> -->
+        <div v-show="showSuccess" class="alert alert-success" role="alert">
+          Registro exitoso!
+        </div>
+
         <button type="submit" class="btn btn-primary ReceiveButton" @click="saveReceive()">Archivar</button>
         <button type="submit" class="btn btn-danger ReceiveButton">Cancelar</button>
 
@@ -79,11 +82,24 @@ export default {
         selectedDatePicker: "",
         inventory: "",
         location: "",
-      }
+      },
+
+      showSuccess: false,
+
     };
   },
 
   methods: {
+    resetForm() {
+    this.form.dependency = "";
+    this.form.documentType = "";
+    this.form.name = "";
+    this.form.time = "";
+    this.form.selectedDatePicker = "";
+    this.form.inventory = "";
+    this.form.location = "";
+  },
+
     updateDependency(selectedDependency) {
       this.form.dependency = selectedDependency; // Actualizar form.dependency
     },
@@ -94,6 +110,10 @@ export default {
     saveReceive() {
       receiveService.saveReceive(this.form)
         .then(res => {
+          if (res === "Registro insertado correctamente") {
+            this.showSuccess = true;
+            this.resetForm();
+          } 
         })
     },
     updateselectDatePicker(selectedDatePicker) {

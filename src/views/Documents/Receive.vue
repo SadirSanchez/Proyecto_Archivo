@@ -19,8 +19,8 @@
           <input v-model="form.name" type="text" class="form-control" id="documentNameReceive">
         </div>
         <div class="mb-3">
-          <label for="documentCodeReceive" class="form-label">Código</label>
-          <input type="text" class="form-control" id="documentCodeReceive" v-model="form.code">
+          <label for="documentTimeReceive" class="form-label">Tiempo de retención</label>
+          <input type="text" class="form-control" id="documentTimeReceive" v-model="form.time">
         </div>
 
         <div>
@@ -59,7 +59,6 @@
 
 <script>
 
-
 import receiveService from "@/services/receiveService.js";
 import axios from 'axios';
 
@@ -76,7 +75,7 @@ export default {
         dependency: "",
         documentType: "",
         name: "",
-        code: "",
+        time: "",
         selectedDatePicker: "",
         inventory: "",
         location: "",

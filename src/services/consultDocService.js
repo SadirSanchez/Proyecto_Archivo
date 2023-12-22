@@ -2,9 +2,9 @@ import axios from 'axios';
 import config from './config';
 
 export default {
-    saveReceive(data) {
+    consultDoc(data) {
         return new Promise((resolve, reject) => {
-            axios.post(config.app_url+'document/ReceiveController.php', data)
+            axios.post(config.app_url+'document/ConsultDocument.php', data)
             .then((response) => {
                 resolve(response.data)
             })

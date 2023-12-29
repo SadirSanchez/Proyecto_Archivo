@@ -6,7 +6,7 @@
             <div class="col-md-6 col-sm-12">
                 <div class="mb-3">
                     <label class="form-label">Tipo de documento</label>
-                    <DocumentTypes @selected="updateDocumentType"></DocumentTypes>
+                    <DocumentTypes ref="DocumentTypes" @selected="updateDocumentType"></DocumentTypes>
                 </div>
                 <div class="mb-3">
                     <label for="documentNameConsult" class="form-label">Nombre</label>
@@ -15,17 +15,17 @@
 
                 <div class="mb-3">
                     <label class="form-label">Dependencia Productora</label>
-                    <DependencySelector @selected="updateDependency"></DependencySelector>
+                    <DependencySelector ref="dependencySelector" @input="updateDependency" @selected="updateDependency">
+                    </DependencySelector>
                 </div>
 
                 <div>
                     <label class="form-label">Fecha de elaboración</label>
-                    <date-picker class="my-3" @selected="updateselectDatePicker"></date-picker>
+                    <date-picker ref="datePicker" class="my-3" @selected="updateselectDatePicker"></date-picker>
                 </div>
 
                 <button type="button" @click="consultDocuments" class="btn btn-primary">Consultar</button>
-                <button type="button" class="btn btn-danger mx-3">Cancelar</button>
-
+                <button type="button" @click="resetForm" class="btn btn-danger mx-3">Nueva consulta</button>
                 <table class="table">
                     <thead>
                         <tr>
@@ -81,18 +81,21 @@ export default {
     methods: {
 
         updateDependency(selectedDependency) {
-            this.form.originDependency = selectedDependency; // Actualizar form.originDependency
+            this.form.originDependency = selectedDependency; // Actualiza form.originDependency
         },
 
         updateDocumentType(selectedDocumentType) {
-            this.form.documentType = selectedDocumentType; // Actualizar form.documentType
+            this.form.documentType = selectedDocumentType; // Actualiza form.documentType
         },
 
         updateselectDatePicker(selectedDatePicker) {
-            this.form.dateElaboration = selectedDatePicker; // Actualizar form.dateElaboration
+            this.form.dateElaboration = selectedDatePicker; // Actualiza form.dateElaboration
         },
 
         consultDocuments() {
+
+            // Reiniciamos el array de documentos antes de realizar una nueva consulta
+            this.documents = [];
             // se crea un objeto con los datos del formulario
             const formData = {
                 documentName: this.form.documentName,
@@ -106,16 +109,33 @@ export default {
                 .then(response => {
 
                     this.documents = response;
+
                 })
+
                 .catch(error => {
                     // Maneja los errores del servicio
                     console.error(error);
                 });
         },
 
+        resetForm() {
+            // Restablece los valores del formulario a su estado inicial
+            this.form = {
+                documentName: "",
+                documentType: "",
+                originDependency: "",
+                dateElaboration: "",
+            };
 
+            // Limpia el array de documentos
+            this.documents = [];
 
+            // Se llama al método reset de cada componente
+            this.$refs.DocumentTypes.reset();
+            this.$refs.dependencySelector.reset();
+            this.$refs.datePicker.reset();
 
+        },
 
     },
 };

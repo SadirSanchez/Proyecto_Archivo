@@ -1,7 +1,7 @@
 <template>
     <div class="mb-3">
-        <select id="productionUnit" class="form-select" @change="selectDependency">
-            <option selected>Seleccionar</option>
+        <select id="productionUnit" class="form-select" v-model="selectedDependency" @change="selectDependency">
+            <option disabled value="" selected>Seleccionar</option>
             <option value="despacho">Despacho</option>
             <option value="gobierno">Gobierno</option>
             <option value="secGeneral">Secretaria General</option>
@@ -19,14 +19,17 @@ export default {
     name: 'DependencySelector',
     data() {
         return {
-            selectedDependency: null // Inicializar el valor seleccionado
+            selectedDependency: "" // Inicializa el valor seleccionado
         };
     },
     methods: {
         selectDependency() {
-            this.selectedDependency = event.target.value; // Guardar el valor seleccionado
-            this.$emit('selected', this.selectedDependency); // Emitir el evento 'selected'
-        }
+            this.$emit('input', this.selectedDependency); // Emite el evento 'input'
+            this.$emit('selected', this.selectedDependency); // Emite el evento 'selected'
+        },
+        reset() {
+            this.selectedDependency = ""; // Restablece el valor del selector
+        },
     }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
-    <select id="documentType" class="form-select" @change="selectDocumentType">
-        <option selected>Seleccionar</option>
+    <select id="documentType" class="form-select" v-model="selectedDocumentType" @change="selectDocumentType">
+        <option disabled value="" selected>Seleccionar</option>
         <option value="actas">Actas</option>
         <option value="resoluciones">Resoluciones</option>
         <option value="decretos">Decretos</option>
@@ -17,14 +17,18 @@ export default {
 
     data() {
         return {
-            selectedDocumentType: null
+            selectedDocumentType: ""
         };
     },
 
     methods: {
-        selectDocumentType() {
-            this.selectedDocumentType = event.target.value; // Guardar el valor seleccionado
-            this.$emit('selected', this.selectedDocumentType); // Emitir el evento 'selected'
+        selectDocumentType()
+        {
+            this.$emit('input', this.selectedDocumentType); // Emite el evento 'input'
+            this.$emit('selected', this.selectedDocumentType); // Emite el evento 'selected'
+        },
+        reset() {
+            this.selectedDocumentType = ""; // Restablece el valor del selector
         }
     }
 };

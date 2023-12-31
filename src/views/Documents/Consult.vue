@@ -25,13 +25,14 @@
                 </div>
 
                 <button type="button" @click="consultDocuments" class="btn btn-primary">Consultar</button>
-                <button type="button" @click="resetForm" class="btn btn-danger mx-3">Nueva consulta</button>
+                <button type="button" @click="resetForm" class="btn btn-success mx-3">Nueva consulta</button>
                 <table class="table">
                     <thead>
                         <tr>
                             <th>Nombre</th>
                             <th>Tipo de documento</th>
                             <th>Fecha de elaboración</th>
+                            <th>Archivo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,6 +40,10 @@
                             <td>{{ document.DocumentName }}</td>
                             <td>{{ document.DocumentType }}</td>
                             <td>{{ document.DateElaboration }}</td>
+                            <td>
+                                <a :href="'http://localhost/proyecto-archivo-back-end/' + document.FileRoute"
+                                    target="_blank">Ver Archivo</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -56,6 +61,7 @@
 import DocumentModel from '@/components/DocumentModel.vue';
 import axios from 'axios';
 import consultDocService from "@/services/consultDocService.js";
+import archivoservise from '@/services/archivoservise';
 
 export default {
 

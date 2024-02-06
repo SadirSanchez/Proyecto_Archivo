@@ -1,30 +1,44 @@
 <template>
   <div>
-    <input type="date" v-model="selectedDate" class="form-control" @change="selectDate">
+    <!-- <input type="date" v-model="selectedDate" class="form-control" @change="selectDate"> -->
+    <VueDatePicker
+      :range="true"
+      utc
+      auto-apply
+      v-model="selectedDate"
+      locale="es"
+      :enable-time-picker="false"
+    ></VueDatePicker>
   </div>
 </template>
-  
+
 <script>
+import VueDatePicker from "@vuepic/vue-datepicker";
+import "@vuepic/vue-datepicker/dist/main.css";
 export default {
-  name: 'DatePicker',
+  name: "DatePicker",
+  components: {
+    VueDatePicker,
+  },
   data() {
     return {
-      selectedDate: '',
-      selectedDatePicker: '',
+      selectedDate: "",
     };
   },
   methods: {
-    selectDate() {
-      this.selectedDatePicker = event.target.value; // Guardar el valor seleccionado
-      this.$emit('selected', this.selectedDatePicker); // Emite el evento 'selected'
+    selectDate(value) {
+      this.$emit("selected", value); // Emite el evento 'selected'
     },
     reset() {
-      this.selectedDate = ''; // Restablecemos el valor del selector de fechas
-      this.selectedDatePicker = ''; // Restablece el valor seleccionado
+      this.selectedDate = ""; // Restablecemos el valor del selector de fechas
+    },
+  },
+  watch: {
+    selectedDate(newvalue){
+      this.selectDate(newvalue)
     }
   }
 };
 </script>
-  
+
 <style scoped></style>
-  

@@ -96,6 +96,7 @@ export default {
 
         updateselectDatePicker(selectedDatePicker) {
             this.form.dateElaboration = selectedDatePicker; // Actualiza form.dateElaboration
+
         },
 
         consultDocuments() {

@@ -3,7 +3,7 @@
 }
 
 .backgroundLogin-container {
-    background: url("./Img/Archivador.jpg");
+    /* background: url("./Img/Archivador.jpg"); */
     background-size: cover;
     display: flex;
     justify-content: center;
